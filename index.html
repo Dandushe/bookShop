@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <title>Books Shop-d</title>
+</head>
+
+<body onload="onInit()">
+    <h1>Books Shop</h1>
+
+    <section>
+        <p>Filter by</p>
+        <label>
+            Max price:
+            0-200
+            <input type="range" min="0" max="200" onchange="this.title=this.value;onSetFilterBy({maxPrice: this.value})" />
+        </label>
+        <pre></pre>
+        <label>
+            Minimum rate:
+            0-10
+            <input type="range" min="0" max="10" onchange="this.title=this.value;onSetFilterBy({minRate: this.value})" />
+        </label>
+    </section>
+    
+
+    <section>
+        <pre>
+            <span class="create-book" onclick="onAddBook()">Click here and create a new book</span>
+        </pre>
+        <table cellspacing="10">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Title</th>
+                    <th>Price</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody class="books-table">
+                
+            </tbody>
+        </table>
+    </section>
+   
+
+    <section class="modal">
+        <!-- <div class="modal-content">
+            <img src="">
+            <h2></h2>
+            <span class="price"></span>
+
+            <span class="fa fa-star checked" onclick="onRateClick()"></span>
+            <span class="fa fa-star checked" onclick="onRateClick()"></span>
+            <span class="fa fa-star" onclick="onRateClick()"></span>
+            <span class="fa fa-star" onclick="onRateClick()"></span>
+            <span class="fa fa-star" onclick="onRateClick()"></span>
+
+            <h5>Description</h5>
+            <p></p>
+            
+            <button onclick="onCloseModal()">Close</button>
+        </div> -->
+    </section>
+
+
+
+
+    <script src="js/util.service.js"></script>
+    <script src="js/storage.service.js"></script>
+    <script src="js/book.service.js"></script>
+    <script src="js/book.controller.js"></script>
+</body>
+
+</html>
